@@ -12,11 +12,11 @@ function Login() {
         /* Email Verification */
 
         const email = e.target.email.value;
-        const password = e.target.password.value
+        const password = e.target.password.value;
         const regexEmail = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
         if(email === "" || password === ""){
-            Swal("please complete the form");
+            Swal("Please complete the form");
             return
         }
         if (email !== "" && !regexEmail.test(email)){
@@ -40,13 +40,11 @@ function Login() {
                 localStorage.setItem("token", token)
                 navigate("/list")
             })
-            
-
     }
 
     return (
 
-        <form className="container d-flex flex-column align-items-center" onSubmit={submitHandle}>
+        <form className="container d-flex flex-column align-items-center justify-content-center" onSubmit={submitHandle}>
 
             <h1>Form to Login</h1>
 
