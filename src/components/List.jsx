@@ -1,13 +1,16 @@
-import {Navigate, useNavigate} from 'react-router-dom'
+import { useEffect } from "react"
+import { useNavigate } from 'react-router-dom';
 
 export default function List () {
 
-    const navigates = useNavigate()
-    const token = localStorage.getItem("token")
+    const navigate = useNavigate()
 
-    if(token === null){
-        navigates('/')
-    }
+    useEffect(()=>{
+        const token = localStorage.getItem("token")
+        if(token === null){
+            navigate("/")
+        }
+    },[])
 
     return(
         <h2>List Component</h2>

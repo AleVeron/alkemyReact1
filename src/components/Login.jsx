@@ -1,8 +1,10 @@
 import axios from 'axios'
 import Swal from '@sweetalert/with-react'
-import {useHistory} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
+
+    const navigate = useNavigate()
 
     const submitHandle = (e) => {
         e.preventDefault();
@@ -36,6 +38,7 @@ function Login() {
                 console.log(res.data);
                 const token = res.data.token;
                 localStorage.setItem("token", token)
+                navigate("/list")
             })
             
 
