@@ -1,14 +1,23 @@
 import { Link } from 'react-router-dom';
+import {useState, useEffect} from 'react'
 
 function Header() {
+
+    const [user,setUser]= useState()
+
+    useEffect(() => {
+        const token = localStorage.getItem("token")
+        setUser(token)
+    }, [])
+
     return (
         <header>
 
-            <nav>
-                <ul className='d-flex justify-content-around'>
-                    <li>
+                <ul className='d-flex justify-content-around align-items-center'>
+                    {!user ? <li>
                         <Link to="/">Home</Link>
-                    </li>
+                    </li> : null}
+
                     <li>
                         <Link to="list">List</Link>
                     </li>
@@ -16,7 +25,6 @@ function Header() {
                         <Link to="/contact">Contact</Link>
                     </li>
                 </ul>
-            </nav>
 
         </header>
     )
