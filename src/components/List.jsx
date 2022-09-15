@@ -29,13 +29,14 @@ export default function List() {
                 Swal(<h1>Error in the api, try later</h1>)
             })
     }
+    
 
     return (
 
         <div className="row d-flex justify-content-center align-items-center m-4">
             {movies.map((movie, index) => (
 
-                <div key={movie.id} className="container card mb-3 col-10 col-sm-12 col-md-5 col-xl-3 rounded-5" 
+                <div key={movie.id} className="card mb-3 col-10 col-sm-12 col-md-5 col-xl-3 rounded-5 m-4" 
                 style={{
                    backgroundImage: `url("${urlMovie+movie.poster_path}")`,
                    backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat"
