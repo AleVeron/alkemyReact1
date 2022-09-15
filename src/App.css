@@ -29,6 +29,35 @@ header ul{
     height: 100%;
 }
 
+.err{
+    height: 100vh;
+}
+
+.detail{
+    min-height: 100vh;
+}
+.detailTwo{
+    background-color: rgba(0, 0, 0, 0.637);
+    border-radius: 25px;
+    color: white;
+}
+
+
+.imgDetail{
+   opacity: 0.7;
+   transition: all ease-in 1s;
+}
+.imgDetail:hover{
+    opacity: 1;
+    transition: all ease-in 1s;
+}
+@media (max-width:600px){
+    .imgDetail{
+        width: 100%;
+        opacity: 0;
+    }
+}
+
 nav{
     width: 100%;
 }

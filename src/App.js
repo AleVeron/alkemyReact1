@@ -10,6 +10,7 @@ function App() {
 
 
   return (
+    
     <div className="App d-flex flex-column justify-content-between">
 
       <Header />
@@ -18,7 +19,7 @@ function App() {
 
         <Route path="/" element={<Login />} />
         <Route path="/list" element={<List />} />
-        <Route path="/detail" element={<Detail />} />
+        <Route path="/detail/:id" element={<Detail />} />
 
       </Routes>
 

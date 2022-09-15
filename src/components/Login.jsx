@@ -9,7 +9,7 @@ function Login() {
 
     const navigate = useNavigate()
 
-    const [user,setUser]= useState()
+    const [user, setUser] = useState()
 
     const [loading, setLoading] = useState();
 
@@ -52,27 +52,30 @@ function Login() {
             .then(res => {
                 const token = res.data.token;
                 localStorage.setItem("token", token)
+                Swal({
+                    title: "Login succesfull",
+                    timer: 5000
+                })
                 setLoading(false)
                 navigate("/list")
-                Swal({
-                    title:"Login succesfull",
-                    timer:5000
-                })
+            }).finally(() => {
                 window.location.reload(false);
             })
     }
 
 
+    /*Loader*/
+
     if (loading) {
         return (
-          <div className="loading d-flex justify-content-center align-items-center">
-            <img
-              src="https://c.tenor.com/wpSo-8CrXqUAAAAi/loading-loading-forever.gif"
-              alt="loading"
-            ></img>
-          </div>
+            <div className="loading d-flex justify-content-center align-items-center">
+                <img
+                    src="https://c.tenor.com/wpSo-8CrXqUAAAAi/loading-loading-forever.gif"
+                    alt="loading"
+                ></img>
+            </div>
         );
-      }
+    }
 
     return (
         <>

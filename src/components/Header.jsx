@@ -7,6 +7,8 @@ function Header() {
     const [user, setUser] = useState()
     const navigate = useNavigate()
 
+
+
     useEffect(() => {
         const token = localStorage.getItem("token")
         setUser(token)
@@ -18,8 +20,11 @@ function Header() {
         window.location.reload(false);
     }
 
+
+
     return (
         <header>
+
             {!user ?
 
                 <ul className='d-flex justify-content-around align-items-center'>
@@ -28,11 +33,9 @@ function Header() {
                     </li>
 
                     <li>
-                        <Link to="list">List</Link>
+                        <Link  to="list">List</Link>
                     </li>
-                    <li>
-                        <Link to="/contact">Contact</Link>
-                    </li>
+
                 </ul>
 
                 :
@@ -42,9 +45,7 @@ function Header() {
                     <li>
                         <Link to="list">List</Link>
                     </li>
-                    <li>
-                        <Link to="/contact">Contact</Link>
-                    </li>
+
                     <li>
                         <button className='btn btn-danger' onClick={logOut}>Logout</button>
                     </li>
