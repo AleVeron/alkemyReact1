@@ -91,8 +91,11 @@ export default function List() {
                             </div>
                         </div>
                     ))}
-                    <button onClick={subtract}>Prev</button>
-                    <button onClick={add}>Next</button>
+                    <div className="buttonsFilm d-flex justify-content-between align-items-center">
+                        <button className="btn btn-danger" onClick={subtract}>Prev</button>
+                        <button className="btn btn-primary" onClick={add}>Next</button>
+                    </div>
+
                 </div>
             }
 

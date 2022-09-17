@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
+import Seeker from './Seeker';
 
 function Header() {
 
     const [user, setUser] = useState()
     const navigate = useNavigate()
-
 
 
     useEffect(() => {
@@ -19,7 +19,6 @@ function Header() {
         navigate("/")
         window.location.reload(false);
     }
-
 
 
     return (
@@ -47,8 +46,13 @@ function Header() {
                     </li>
 
                     <li>
+                        <Seeker/>
+                    </li>
+
+                    <li>
                         <button className='btn btn-danger' onClick={logOut}>Logout</button>
                     </li>
+
                 </ul>
 
             }
