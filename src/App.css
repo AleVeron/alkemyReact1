@@ -51,6 +51,10 @@ header ul{
     width: 100%;
 }
 
+.noRes{
+    visibility: hidden;
+}
+
 .imgDetail{
    opacity: 0.7;
    transition: all ease-in 1s;
