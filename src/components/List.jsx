@@ -8,12 +8,25 @@ import Swal from '@sweetalert/with-react'
 export default function List() {
 
 
+  
+
+    const likeDislike = (e) => {
+        console.log(e.target.parentElement);
+        console.log(e.target.parentElement.querySelector('h5').innerText);
+        let favMovie = e.target.parentElement.querySelector('h5').innerText
+    
+        /* setFavs(e.target.parentElement.querySelector('h5').innerText) */
+        localStorage.setItem('favs', JSON.stringify(favMovie))  
+    }
+
+
     const urlMovie = "https://image.tmdb.org/t/p/w500/"
     const navigate = useNavigate()
 
     const [loading, setLoading] = useState();
     const [movies, setMovies] = useState([])
     const [num, setNum] = useState(1)
+
 
     const add = () => {
         if (num < 20) {
@@ -71,6 +84,7 @@ export default function List() {
 
                 :
                 <div className="row d-flex justify-content-center align-items-center m-2 gap-5">
+                    <h1 className="text-center">Movies</h1>
                     {movies.map((movie) => (
 
                         <div key={movie.id} className="card mb-3 col-10 col-sm-12 col-md-5 col-xl-3 rounded-5 "
@@ -83,6 +97,8 @@ export default function List() {
                                 <div className="d-flex flex-column">
                                     <h5 className="card-title">{movie.title.substring(0, 30)}</h5>
                                     <p>{movie.overview.substring(0, 100) + "..."}</p>
+
+                                    <button onClick={likeDislike} className="fauvoriteBtn">🧡</button>
                                 </div>
 
                                 <Link key={movie.id} to={`/detail/${movie.id}`}>

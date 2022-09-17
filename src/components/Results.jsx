@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
 import { Link } from 'react-router-dom';
+import List from "./List"
 
 
 export default function Results() {
@@ -9,11 +10,10 @@ export default function Results() {
     let results = query.get('keyword')
     const urlMovie = "https://image.tmdb.org/t/p/w500/"
     const [movies, setMovies] = useState()
-
-    /*  https://api.themoviedb.org/3/search/movie?api_key=<<api_key>>&language=en-US&page=1&include_adult=false */
+    console.log(movies);
 
     useEffect(() => {
-
+       
         axios
             .get(`https://api.themoviedb.org/3/search/movie?api_key=da105d94ec008192c58e8fcad8b05171&language=es-MX&query=${results}`)
             .then(res => setMovies(res.data.results))
@@ -21,10 +21,10 @@ export default function Results() {
                 console.log(err);
             })
 
-    }, [results])
+    }, [])
 
     return (
-        <div className="row d-flex justify-content-center align-items-center m-2 gap-5">
+        <div className="row d-flex justify-content-center align-items-center m-2 gap-5 results">
             {movies ? movies.map((movie, index) => (
                 <div key={movie.id} className="card mb-3 col-10 col-sm-12 col-md-5 col-xl-3 rounded-5 "
                     style={{
@@ -45,7 +45,8 @@ export default function Results() {
                 </div>
             ))
                 :
-                null
+
+                <h1>Not found results</h1>
 
             }
         </div>
