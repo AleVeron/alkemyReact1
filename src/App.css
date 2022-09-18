@@ -84,6 +84,11 @@ header ul{
         opacity: 0.7;
     }
 }
+
+.favs{
+    min-height: 100vh;
+}
+
 .results{
     min-height: 100vh;
 }

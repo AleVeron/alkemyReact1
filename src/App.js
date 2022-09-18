@@ -6,6 +6,7 @@ import Footer from './components/Footer'
 import Detail from './components/Detail'
 import Results from './components/Results'
 import './App.css'
+import Favs from './components/Favs';
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
         <Route path="/list" element={<List />} />
         <Route path="/detail/:id" element={<Detail />} />
         <Route path="/results" element={<Results />} />
+        <Route path="/favs" element={<Favs />} />
 
       </Routes>
 

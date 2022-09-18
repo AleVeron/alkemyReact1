@@ -7,16 +7,14 @@ import Swal from '@sweetalert/with-react'
 
 export default function List() {
 
-
-  
+    const fav = []
 
     const likeDislike = (e) => {
-        console.log(e.target.parentElement);
-        console.log(e.target.parentElement.querySelector('h5').innerText);
-        let favMovie = e.target.parentElement.querySelector('h5').innerText
-    
-        /* setFavs(e.target.parentElement.querySelector('h5').innerText) */
-        localStorage.setItem('favs', JSON.stringify(favMovie))  
+        let movId = e.target.id
+        fav.push(movId)
+        console.log(fav);
+        localStorage.setItem('favs', JSON.stringify(fav))
+        /*https://api.themoviedb.org/3/movie/{movie.id}?api_key=da105d94ec008192c58e8fcad8b05171&language=es-MX*/
     }
 
 
@@ -47,6 +45,7 @@ export default function List() {
         if (token === null) {
             navigate("/");
         }
+
         getMovies()
         setLoading(false)
     }, [movies])
@@ -98,7 +97,7 @@ export default function List() {
                                     <h5 className="card-title">{movie.title.substring(0, 30)}</h5>
                                     <p>{movie.overview.substring(0, 100) + "..."}</p>
 
-                                    <button onClick={likeDislike} className="fauvoriteBtn">🧡</button>
+                                    <button id={movie.id} onClick={likeDislike} className="fauvoriteBtn">🧡</button>
                                 </div>
 
                                 <Link key={movie.id} to={`/detail/${movie.id}`}>
