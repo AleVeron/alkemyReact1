@@ -28,11 +28,7 @@ function Header() {
 
                 <ul className='d-flex justify-content-around align-items-center'>
                     <li>
-                        <Link to="/">Home</Link>
-                    </li>
-
-                    <li>
-                        <Link to="list">List</Link>
+                        <Link to="/">Welcome</Link>
                     </li>
 
                 </ul>

@@ -78,6 +78,12 @@ header ul{
     visibility: hidden;
 }
 
+input{
+    border-radius: 10px;
+    border: none;
+}
+
+
 .imgDetail{
    opacity: 0.7;
    transition: all ease-in 1s;

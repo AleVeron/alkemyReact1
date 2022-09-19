@@ -84,19 +84,21 @@ function Login() {
 
                 <h1>Form to Login</h1>
 
+                <p>Please enter the data in the view</p>
+
                 <label htmlFor="email">
                     <span>Email</span>
                     <br />
-                    <input type="email" name="email"></input>
+                    <input placeholder=' challenge@alkemy.org' type="email" name="email"></input>
                 </label>
 
                 <label htmlFor="password">
                     <span>Password</span>
                     <br />
-                    <input type="password" name="password"></input>
+                    <input placeholder=' react' type="password" name="password"></input>
                 </label>
 
-                <button className="mt-4 col-1" type="submit">Log In</button>
+                <button className="btn btn-light mt-4 col-1" type="submit">Log In</button>
 
             </form> : <List />}
 
