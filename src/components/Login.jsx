@@ -48,7 +48,7 @@ function Login() {
         /* Send data to alkemy´s api */
 
         axios
-            .post('http://challenge-react.alkemy.org', { email, password, referrerPolicy: "unsafe_url" })
+            .post('https://challenge-react.alkemy.org', { email, password, referrerPolicy: "unsafe_url" })
             .then(res => {
                 const token = res.data.token;
                 localStorage.setItem("token", token)
