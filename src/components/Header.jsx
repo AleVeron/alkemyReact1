@@ -14,7 +14,7 @@ function Header() {
         setUser(token)
     }, [])
 
-    const logOut = ()=>{
+    const logOut = () => {
         localStorage.removeItem("token")
         navigate("/")
         window.location.reload(false);
@@ -32,21 +32,25 @@ function Header() {
                     </li>
 
                     <li>
-                        <Link  to="list">List</Link>
+                        <Link to="list">List</Link>
                     </li>
 
                 </ul>
 
                 :
 
-                <ul className='d-flex justify-content-around align-items-center'>
+                <ul className='d-flex flex-column flex-sm-row justify-content-around align-items-center gap-3'>
 
                     <li>
                         <Link to="list">List</Link>
                     </li>
 
                     <li>
-                        <Seeker/>
+                        <Link to="favs">Favs</Link>
+                    </li>
+
+                    <li>
+                        <Seeker />
                     </li>
 
                     <li>
