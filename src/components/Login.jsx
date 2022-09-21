@@ -22,8 +22,8 @@ function Login() {
         e.preventDefault();
 
         setLoading(true);
-
         /* Email Verification */
+
         const email = e.target.email.value;
         const password = e.target.password.value;
         const regexEmail = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -48,7 +48,7 @@ function Login() {
         /* Send data to alkemy´s api */
 
         axios
-            .post('https://challenge-react.alkemy.org', { email, password })
+            .post('http://challenge-react.alkemy.org', { email, password })
             .then(res => {
                 const token = res.data.token;
                 localStorage.setItem("token", token)
